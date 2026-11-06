@@ -1,0 +1,105 @@
+{
+  "sections": {
+    "main": {
+      "type": "pyoe-black-friday",
+      "blocks": {
+        "tier_1": {
+          "type": "tier",
+          "settings": {
+            "value": 100,
+            "price": 85,
+            "note": "An easy add to any gift.",
+            "featured": false,
+            "flag": "Most popular"
+          }
+        },
+        "tier_2": {
+          "type": "tier",
+          "settings": {
+            "value": 150,
+            "price": 125,
+            "note": "Our most picked gift for the holidays.",
+            "featured": true,
+            "flag": "Most popular"
+          }
+        },
+        "tier_3": {
+          "type": "tier",
+          "settings": {
+            "value": 250,
+            "price": 200,
+            "note": "Made for a date night for two.",
+            "featured": false,
+            "flag": "Most popular"
+          }
+        },
+        "gallery_1": {
+          "type": "gallery_image",
+          "settings": {}
+        },
+        "gallery_2": {
+          "type": "gallery_image",
+          "settings": {}
+        },
+        "gallery_3": {
+          "type": "gallery_image",
+          "settings": {}
+        },
+        "gallery_4": {
+          "type": "gallery_image",
+          "settings": {}
+        },
+        "gallery_5": {
+          "type": "gallery_image",
+          "settings": {}
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Can the gift card be used on any class?",
+            "answer": "Yes. Gift cards work on any Pour Your Own Epoxy class on our calendar, in any location."
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "When will my gift card arrive?",
+            "answer": "By email straight after checkout. You can forward it to the person you're gifting or print it to wrap."
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I use BLACKFRIDAY15 on a gift card?",
+            "answer": "No. The code is for selected classes only, and the gift cards already include their Black Friday savings."
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Which classes does BLACKFRIDAY15 work on?",
+            "answer": "Look for classes marked Black Friday on our calendar. The code will apply at checkout on eligible classes until Nov 30."
+          }
+        }
+      },
+      "block_order": [
+        "tier_1",
+        "tier_2",
+        "tier_3",
+        "gallery_1",
+        "gallery_2",
+        "gallery_3",
+        "gallery_4",
+        "gallery_5",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

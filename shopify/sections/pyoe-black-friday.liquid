@@ -1,0 +1,271 @@
+{%- comment -%}
+  Pour Your Own Epoxy: Black Friday landing page section.
+  Needs assets/pyoe-bf.css and assets/pyoe-bf.js uploaded to the theme.
+  Every offer, date, link and image is editable in the theme editor.
+{%- endcomment -%}
+
+{{ 'pyoe-bf.css' | asset_url | stylesheet_tag }}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap" rel="stylesheet">
+<script src="{{ 'pyoe-bf.js' | asset_url }}" defer></script>
+
+{%- capture countdown -%}
+  <div class="pyoe-bf__countdown" data-pyoe-countdown
+       data-start="{{ section.settings.sale_start }}"
+       data-end="{{ section.settings.sale_end }}"
+       data-label-before="{{ section.settings.label_before | escape }}"
+       data-label-live="{{ section.settings.label_live | escape }}"
+       data-label-ended="{{ section.settings.label_ended | escape }}">
+    <p class="pyoe-bf__countdown-label" data-label>{{ section.settings.label_before }}</p>
+    <div class="pyoe-bf__clock">
+      <span class="pyoe-bf__unit"><span class="pyoe-bf__num" data-d>00</span><span class="pyoe-bf__unit-label">days</span></span>
+      <span class="pyoe-bf__unit"><span class="pyoe-bf__num" data-h>00</span><span class="pyoe-bf__unit-label">hours</span></span>
+      <span class="pyoe-bf__unit"><span class="pyoe-bf__num" data-m>00</span><span class="pyoe-bf__unit-label">mins</span></span>
+      <span class="pyoe-bf__unit"><span class="pyoe-bf__num" data-s>00</span><span class="pyoe-bf__unit-label">secs</span></span>
+    </div>
+  </div>
+{%- endcapture -%}
+
+<div class="pyoe-bf" id="pyoe-bf-{{ section.id }}">
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="pyoeResin" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#4fc8c0"/>
+        <stop offset=".55" stop-color="#0e6e78"/>
+        <stop offset="1" stop-color="#0a4d55"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  {%- if section.settings.bar_text != blank -%}
+    <div class="pyoe-bf__bar">{{ section.settings.bar_text }}</div>
+  {%- endif -%}
+
+  <section class="pyoe-bf__hero">
+    <div class="pyoe-bf__wrap pyoe-bf__hero-grid">
+      <div>
+        <p class="pyoe-bf__kicker">{{ section.settings.kicker }}</p>
+        <h1>{{ section.settings.heading }}</h1>
+        <p class="pyoe-bf__lede">{{ section.settings.lede }}</p>
+        <div class="pyoe-bf__ctas">
+          <a class="pyoe-bf__btn pyoe-bf__btn--primary" href="#pyoe-bf-cards">Shop gift card deals</a>
+          <a class="pyoe-bf__btn pyoe-bf__btn--ghost" href="#pyoe-bf-classes">{{ section.settings.offer_heading }}</a>
+        </div>
+        {{ countdown }}
+      </div>
+      <div class="pyoe-bf__photo">
+        {%- if section.settings.hero_image != blank -%}
+          {{ section.settings.hero_image | image_url: width: 1400 | image_tag: loading: 'eager', sizes: '(max-width: 900px) 100vw, 45vw', alt: section.settings.hero_image.alt }}
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+
+  <svg class="pyoe-bf__river" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path class="resin" d="M0,0 H1440 V40 C1260,70 1080,18 900,40 C720,62 540,14 360,38 C220,56 100,30 0,46 Z"/>
+    <path class="wood" d="M0,0 H1440 V22 C1260,50 1080,2 900,24 C720,46 540,0 360,22 C220,38 100,14 0,28 Z"/>
+  </svg>
+
+  <section class="pyoe-bf__section" id="pyoe-bf-cards">
+    <div class="pyoe-bf__wrap">
+      <div class="pyoe-bf__head">
+        <h2>{{ section.settings.cards_heading }}</h2>
+        <p>{{ section.settings.cards_text }}</p>
+      </div>
+      <div class="pyoe-bf__tiers">
+        {%- assign tier_index = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'tier' -%}
+            {%- assign tier_index = tier_index | plus: 1 -%}
+            {%- assign mod = tier_index | modulo: 3 -%}
+            {%- assign saving = block.settings.value | minus: block.settings.price -%}
+            <article class="pyoe-bf__tier{% if block.settings.featured %} pyoe-bf__tier--featured{% endif %}" {{ block.shopify_attributes }}>
+              <div class="pyoe-bf__slice">
+                <svg viewBox="0 0 160 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+                  {%- case mod -%}
+                    {%- when 1 -%}<path fill="url(#pyoeResin)" d="M98,0 C88,18 104,34 92,52 C82,68 96,84 88,100 L118,100 C124,82 110,68 120,52 C132,32 116,18 126,0 Z"/>
+                    {%- when 2 -%}<path fill="url(#pyoeResin)" d="M70,0 C60,20 78,36 66,54 C56,70 72,86 64,100 L96,100 C102,84 86,70 96,54 C108,34 90,18 100,0 Z"/>
+                    {%- else -%}<path fill="url(#pyoeResin)" d="M40,0 C30,16 46,36 34,52 C24,70 40,84 30,100 L62,100 C68,82 52,70 62,52 C74,34 58,16 68,0 Z"/>
+                  {%- endcase -%}
+                </svg>
+                <span class="pyoe-bf__slice-brand">Pour Your Own Epoxy gift card</span>
+                {%- if block.settings.featured -%}<span class="pyoe-bf__flag">{{ block.settings.flag }}</span>{%- endif -%}
+                <span class="pyoe-bf__slice-value">${{ block.settings.value }}</span>
+              </div>
+              <div class="pyoe-bf__tier-body">
+                <div class="pyoe-bf__price">
+                  <span class="pyoe-bf__pay">${{ block.settings.price }}</span>
+                  <span class="pyoe-bf__was">${{ block.settings.value }}</span>
+                  {%- if saving > 0 -%}<span class="pyoe-bf__save">Save ${{ saving }}</span>{%- endif -%}
+                </div>
+                <p class="pyoe-bf__tier-note">{{ block.settings.note }}</p>
+                <a class="pyoe-bf__btn pyoe-bf__btn--primary" href="{{ block.settings.url | default: '/collections/all' }}">Buy ${{ block.settings.value }} card for ${{ block.settings.price }}</a>
+              </div>
+            </article>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+
+  <section class="pyoe-bf__section" style="padding-top:0">
+    <div class="pyoe-bf__wrap">
+      <div class="pyoe-bf__head"><h2>How gift cards work</h2></div>
+      <ol class="pyoe-bf__steps">
+        <li><h3>Pick your card</h3><p>{{ section.settings.step_1 }}</p></li>
+        <li><h3>It arrives by email</h3><p>{{ section.settings.step_2 }}</p></li>
+        <li><h3>They book a class</h3><p>{{ section.settings.step_3 }}</p></li>
+      </ol>
+    </div>
+  </section>
+
+  {%- if section.settings.show_offer -%}
+  <section class="pyoe-bf__section pyoe-bf__offer" id="pyoe-bf-classes">
+    <div class="pyoe-bf__wrap pyoe-bf__offer-grid">
+      <div>
+        <h2>{{ section.settings.offer_heading }}</h2>
+        <p>{{ section.settings.offer_text }}</p>
+        <div class="pyoe-bf__ctas">
+          <a class="pyoe-bf__btn pyoe-bf__btn--primary" href="{{ section.settings.classes_url | default: '/pages/class-calendar' }}">Find a class near you</a>
+        </div>
+      </div>
+      <div class="pyoe-bf__code">
+        <p class="pyoe-bf__code-label">Use this code at checkout</p>
+        <div class="pyoe-bf__code-row">
+          <span class="pyoe-bf__code-text">{{ section.settings.offer_code }}</span>
+          <button type="button" class="pyoe-bf__btn pyoe-bf__btn--primary pyoe-bf__copy" data-pyoe-copy data-code="{{ section.settings.offer_code | escape }}">Copy code</button>
+        </div>
+        <p class="pyoe-bf__code-small">{{ section.settings.offer_small }}</p>
+      </div>
+    </div>
+  </section>
+  {%- endif -%}
+
+  <section class="pyoe-bf__section">
+    <div class="pyoe-bf__wrap">
+      <div class="pyoe-bf__head">
+        <h2>{{ section.settings.exp_heading }}</h2>
+        <p>{{ section.settings.exp_text }}</p>
+      </div>
+      <div class="pyoe-bf__exp-grid">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'gallery_image' -%}
+            <figure {{ block.shopify_attributes }}>
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy', sizes: '(max-width: 900px) 50vw, 33vw', alt: block.settings.image.alt }}
+              {%- endif -%}
+            </figure>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <div class="pyoe-bf__points">
+        <div><h3>A real night out</h3><p>Grab a drink, pour colored epoxy into real wood and laugh a lot. No experience needed.</p></div>
+        <div><h3>Something to keep</h3><p>Everyone leaves with a finished piece they made with their own hands and will actually use.</p></div>
+        <div><h3>Responsibly sourced wood</h3><p>Our wood comes from healthy, sustainable harvesting practices.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pyoe-bf__section" style="padding-top:0">
+    <div class="pyoe-bf__wrap">
+      <div class="pyoe-bf__head"><h2>Questions</h2></div>
+      <div class="pyoe-bf__faq">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'faq' -%}
+            <details {{ block.shopify_attributes }}><summary>{{ block.settings.question }}</summary><p>{{ block.settings.answer }}</p></details>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+
+  <section class="pyoe-bf__section pyoe-bf__close">
+    <div class="pyoe-bf__wrap">
+      <h2>{{ section.settings.close_heading }}</h2>
+      {{ countdown }}
+      <div class="pyoe-bf__ctas" style="margin-top:32px">
+        <a class="pyoe-bf__btn pyoe-bf__btn--primary" href="#pyoe-bf-cards">Shop gift card deals</a>
+        <a class="pyoe-bf__btn pyoe-bf__btn--ghost" href="{{ section.settings.classes_url | default: '/pages/class-calendar' }}">Find a class near you</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="pyoe-bf__sticky">
+    <span>{{ section.settings.sticky_text }}</span>
+    <a class="pyoe-bf__btn pyoe-bf__btn--primary" href="#pyoe-bf-cards">Shop deals</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PYOE Black Friday",
+  "tag": "div",
+  "max_blocks": 24,
+  "settings": [
+    { "type": "header", "content": "Sale dates" },
+    { "type": "text", "id": "sale_start", "label": "Sale start", "default": "2026-11-20T00:00:00-05:00", "info": "Format 2026-11-20T00:00:00-05:00 (-05:00 is US Eastern)" },
+    { "type": "text", "id": "sale_end", "label": "Sale end", "default": "2026-11-30T23:59:00-05:00" },
+    { "type": "text", "id": "label_before", "label": "Countdown label before sale", "default": "Black Friday deals open in" },
+    { "type": "text", "id": "label_live", "label": "Countdown label during sale", "default": "Sale ends in" },
+    { "type": "text", "id": "label_ended", "label": "Message after sale", "default": "This sale has ended. Thanks for a great Black Friday." },
+
+    { "type": "header", "content": "Hero" },
+    { "type": "text", "id": "bar_text", "label": "Top bar", "default": "Black Friday sale runs Nov 20 to Nov 30. Save up to $50 on gift cards." },
+    { "type": "text", "id": "kicker", "label": "Small line above heading", "default": "Black Friday at Pour Your Own Epoxy" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Give a night they'll pour themselves." },
+    { "type": "textarea", "id": "lede", "label": "Intro text", "default": "Gift cards for our epoxy and wood workshops at breweries, wineries and distilleries near you. Get up to $50 extra on every card, this week only." },
+    { "type": "image_picker", "id": "hero_image", "label": "Hero image" },
+
+    { "type": "header", "content": "Gift cards" },
+    { "type": "text", "id": "cards_heading", "label": "Heading", "default": "Pay less, give more." },
+    { "type": "textarea", "id": "cards_text", "label": "Text", "default": "Every gift card can be used on any class on our calendar, so they get to pick the date and the location that suits them." },
+    { "type": "text", "id": "step_1", "label": "Step 1 text", "default": "Choose $100, $150 or $250 and pay the Black Friday price." },
+    { "type": "text", "id": "step_2", "label": "Step 2 text", "default": "Your gift card lands in your inbox straight after checkout, ready to forward or print and wrap." },
+    { "type": "text", "id": "step_3", "label": "Step 3 text", "default": "They choose a date at a brewery, winery or distillery near them and use the card at checkout." },
+
+    { "type": "header", "content": "Class discount" },
+    { "type": "checkbox", "id": "show_offer", "label": "Show class discount", "default": true },
+    { "type": "text", "id": "offer_heading", "label": "Heading", "default": "15% off selected classes" },
+    { "type": "textarea", "id": "offer_text", "label": "Text", "default": "Already know who's coming with you? Book a seat at one of our Black Friday classes and take 15% off at checkout." },
+    { "type": "text", "id": "offer_code", "label": "Discount code", "default": "BLACKFRIDAY15" },
+    { "type": "text", "id": "offer_small", "label": "Small print", "default": "Valid on selected classes only, until Nov 30. Cannot be combined with other discount codes." },
+    { "type": "url", "id": "classes_url", "label": "Class calendar link" },
+
+    { "type": "header", "content": "Experience and closing" },
+    { "type": "text", "id": "exp_heading", "label": "Experience heading", "default": "What they're getting" },
+    { "type": "textarea", "id": "exp_text", "label": "Experience text", "default": "A couple of hours, a drink in hand, and a piece of functional art they made themselves." },
+    { "type": "text", "id": "close_heading", "label": "Closing heading", "default": "The best gift on their list this year." },
+    { "type": "text", "id": "sticky_text", "label": "Mobile sticky bar text", "default": "Up to $50 off gift cards" }
+  ],
+  "blocks": [
+    {
+      "type": "tier",
+      "name": "Gift card tier",
+      "settings": [
+        { "type": "number", "id": "value", "label": "Card value ($)", "default": 150 },
+        { "type": "number", "id": "price", "label": "Black Friday price ($)", "default": 125 },
+        { "type": "text", "id": "note", "label": "Short note", "default": "Our most picked gift for the holidays." },
+        { "type": "url", "id": "url", "label": "Buy link (gift card product or variant)" },
+        { "type": "checkbox", "id": "featured", "label": "Highlight this tier", "default": false },
+        { "type": "text", "id": "flag", "label": "Highlight label", "default": "Most popular" }
+      ]
+    },
+    {
+      "type": "gallery_image",
+      "name": "Gallery image",
+      "settings": [ { "type": "image_picker", "id": "image", "label": "Image" } ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Can the gift card be used on any class?" },
+        { "type": "textarea", "id": "answer", "label": "Answer", "default": "Yes. Gift cards work on any Pour Your Own Epoxy class on our calendar, in any location." }
+      ]
+    }
+  ],
+  "presets": [ { "name": "PYOE Black Friday" } ]
+}
+{% endschema %}
