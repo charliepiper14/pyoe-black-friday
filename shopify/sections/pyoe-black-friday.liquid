@@ -53,6 +53,7 @@
           <a class="pyoe-bf__btn pyoe-bf__btn--primary" href="#pyoe-bf-cards">Shop gift card deals</a>
           <a class="pyoe-bf__btn pyoe-bf__btn--ghost" href="#pyoe-bf-classes">{{ section.settings.offer_heading }}</a>
         </div>
+        {%- if section.settings.trust_text != blank -%}<p class="pyoe-bf__trust">{{ section.settings.trust_text }}</p>{%- endif -%}
         {{ countdown }}
       </div>
       <div class="pyoe-bf__photo">
@@ -217,6 +218,7 @@
     { "type": "text", "id": "heading", "label": "Heading", "default": "Give a night they'll pour themselves." },
     { "type": "textarea", "id": "lede", "label": "Intro text", "default": "Gift cards for our epoxy and wood workshops at breweries, wineries and distilleries near you. Get up to $50 extra on every card, this week only." },
     { "type": "image_picker", "id": "hero_image", "label": "Hero image" },
+    { "type": "text", "id": "trust_text", "label": "Review line", "default": "Rated 4.8 on Google from 1,590+ reviews" },
 
     { "type": "header", "content": "Gift cards" },
     { "type": "text", "id": "cards_heading", "label": "Heading", "default": "Pay less, give more." },
@@ -262,7 +264,7 @@
       "name": "FAQ",
       "settings": [
         { "type": "text", "id": "question", "label": "Question", "default": "Can the gift card be used on any class?" },
-        { "type": "textarea", "id": "answer", "label": "Answer", "default": "Yes. Gift cards work on any Pour Your Own Epoxy class on our calendar, in any location." }
+        { "type": "textarea", "id": "answer", "label": "Answer", "default": "Yes, any class in any location. They can also be used on online orders, in our showroom, at events and toward custom furniture." }
       ]
     }
   ],

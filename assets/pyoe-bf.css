@@ -236,3 +236,7 @@
 @media (prefers-reduced-motion: reduce) {
   .pyoe-bf * { transition: none !important; }
 }
+
+/* Review trust line under hero buttons */
+.pyoe-bf__trust { margin-top: 18px; font-size: 15px; font-weight: 600; color: var(--amber); }
+.pyoe-bf__trust::before { content: "\2605\2605\2605\2605\2605"; letter-spacing: 2px; margin-right: 8px; }

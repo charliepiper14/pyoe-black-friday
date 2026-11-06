@@ -8,7 +8,7 @@
           "settings": {
             "value": 100,
             "price": 85,
-            "note": "A head start on a seat at any class.",
+            "note": "Use it on classes, online orders or the showroom.",
             "featured": false,
             "flag": "Most popular",
             "url": "/products/pour-your-own-epoxy-gift-card"
@@ -60,7 +60,7 @@
           "type": "faq",
           "settings": {
             "question": "Can the gift card be used on any class?",
-            "answer": "Yes. Gift cards work on any Pour Your Own Epoxy class on our calendar, in any location."
+            "answer": "Yes, any class in any location. They can also be used on online orders, in our showroom, at events and toward custom furniture."
           }
         },
         "faq_2": {
