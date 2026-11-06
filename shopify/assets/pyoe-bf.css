@@ -25,10 +25,11 @@
   -webkit-font-smoothing: antialiased;
 }
 .pyoe-bf *, .pyoe-bf *::before, .pyoe-bf *::after { box-sizing: border-box; }
-.pyoe-bf img { max-width: 100%; display: block; }
-.pyoe-bf a { color: inherit; }
-.pyoe-bf h1, .pyoe-bf h2, .pyoe-bf h3 { margin: 0; line-height: 1.02; letter-spacing: -0.02em; font-weight: 800; }
-.pyoe-bf p { margin: 0; }
+/* Base resets use :where() so they carry zero specificity and never override component classes */
+.pyoe-bf :where(img) { max-width: 100%; display: block; }
+.pyoe-bf :where(a) { color: inherit; }
+.pyoe-bf :where(h1, h2, h3) { margin: 0; line-height: 1.02; letter-spacing: -0.02em; font-weight: 800; font-family: inherit; }
+.pyoe-bf :where(p) { margin: 0; }
 
 .pyoe-bf__wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
 
@@ -90,7 +91,7 @@
 .pyoe-bf__river path.resin { fill: url(#pyoeResin); }
 
 /* Countdown */
-.pyoe-bf__countdown { margin-top: 36px; }
+.pyoe-bf__countdown { margin-top: 34px; }
 .pyoe-bf__countdown-label { font-size: 15px; font-weight: 600; color: var(--resin-glow); margin-bottom: 8px; }
 .pyoe-bf__clock { display: flex; gap: 10px; }
 .pyoe-bf__unit {
@@ -238,5 +239,11 @@
 }
 
 /* Review trust line under hero buttons */
-.pyoe-bf__trust { margin-top: 18px; font-size: 15px; font-weight: 600; color: var(--amber); }
-.pyoe-bf__trust::before { content: "\2605\2605\2605\2605\2605"; letter-spacing: 2px; margin-right: 8px; }
+.pyoe-bf__trust {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin-top: 22px; font-size: 15px; font-weight: 500; line-height: 1.3; color: var(--maple);
+}
+.pyoe-bf__trust::before {
+  content: "\2605\2605\2605\2605\2605"; color: var(--amber);
+  font-size: 16px; letter-spacing: 3px; line-height: 1;
+}
