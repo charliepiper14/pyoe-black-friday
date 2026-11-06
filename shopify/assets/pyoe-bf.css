@@ -252,3 +252,7 @@
   .pyoe-bf__trust { gap: 8px; font-size: 14px; flex-wrap: nowrap; }
   .pyoe-bf__trust::before { font-size: 14px; letter-spacing: 1px; flex-shrink: 0; }
 }
+
+/* Avoid single-word last lines in body copy and ragged headings */
+.pyoe-bf :where(p) { text-wrap: pretty; }
+.pyoe-bf :where(h1, h2, h3) { text-wrap: balance; }
