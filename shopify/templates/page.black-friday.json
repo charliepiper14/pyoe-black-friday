@@ -8,9 +8,10 @@
           "settings": {
             "value": 100,
             "price": 85,
-            "note": "An easy add to any gift.",
+            "note": "A head start on a seat at any class.",
             "featured": false,
-            "flag": "Most popular"
+            "flag": "Most popular",
+            "url": "/products/pour-your-own-epoxy-gift-card"
           }
         },
         "tier_2": {
@@ -18,9 +19,10 @@
           "settings": {
             "value": 150,
             "price": 125,
-            "note": "Our most picked gift for the holidays.",
+            "note": "Covers a full seat at most classes.",
             "featured": true,
-            "flag": "Most popular"
+            "flag": "Most popular",
+            "url": "/products/pour-your-own-epoxy-gift-card"
           }
         },
         "tier_3": {
@@ -28,9 +30,10 @@
           "settings": {
             "value": 250,
             "price": 200,
-            "note": "Made for a date night for two.",
+            "note": "Covers one seat and most of a second.",
             "featured": false,
-            "flag": "Most popular"
+            "flag": "Most popular",
+            "url": "/products/pour-your-own-epoxy-gift-card"
           }
         },
         "gallery_1": {

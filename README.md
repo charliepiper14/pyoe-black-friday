@@ -23,7 +23,7 @@ Images on the staging page load from the PYOE content drive. In Shopify they are
 
 * Class code: BLACKFRIDAY15, 15% off selected classes
 * Sale window: Fri 20 Nov 00:00 ET to Mon 30 Nov 23:59 ET
-* Buy buttons point to `/products/gift-card` and class links to `/pages/class-calendar`
+* Buy buttons point to `/products/pour-your-own-epoxy-gift-card` and class links to `/pages/class-calendar`
 
 ## Installing in Shopify (Online Store 2.0 themes)
 
@@ -46,3 +46,7 @@ Everything (prices, dates, code, copy, FAQs) is editable in the theme editor, so
 * Sale dates
 * Tier notes, especially "Made for a date night for two" on the $250 card
 * Gift card expiry terms, if he wants them in the FAQ
+
+## Note on the existing gift card product
+
+The store's current gift card (`/products/pour-your-own-epoxy-gift-card`) is sold in $144, $169, $184 and $199 amounts, which match class seat prices. The Black Friday tiers ($100, $150, $250) don't exist as variants yet, so the buy buttons land on the product page rather than a specific amount until the Black Friday variants are set up.
