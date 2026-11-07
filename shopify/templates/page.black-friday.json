@@ -11,7 +11,7 @@
             "note": "Use it on classes, online orders or the showroom.",
             "featured": false,
             "flag": "Most popular",
-            "url": "/products/pour-your-own-epoxy-gift-card"
+            "url": "/products/egift-card?variant=50922491674880"
           }
         },
         "tier_2": {
@@ -22,7 +22,7 @@
             "note": "Covers a full seat at most classes.",
             "featured": true,
             "flag": "Most popular",
-            "url": "/products/pour-your-own-epoxy-gift-card"
+            "url": "/products/egift-card?variant=50922491707648"
           }
         },
         "tier_3": {
@@ -33,7 +33,7 @@
             "note": "Covers one seat and most of a second.",
             "featured": false,
             "flag": "Most popular",
-            "url": "/products/pour-your-own-epoxy-gift-card"
+            "url": "/products/egift-card?variant=50922491740416"
           }
         },
         "gallery_1": {
@@ -73,15 +73,186 @@
         "faq_3": {
           "type": "faq",
           "settings": {
-            "question": "Can I use BLACKFRIDAY15 on a gift card?",
+            "question": "Can I use BLACKFRIDAY25 on a gift card?",
             "answer": "No. The code is for selected classes only, and the gift cards already include their Black Friday savings."
           }
         },
         "faq_4": {
           "type": "faq",
           "settings": {
-            "question": "Which classes does BLACKFRIDAY15 work on?",
-            "answer": "Look for classes marked Black Friday on our calendar. The code will apply at checkout on eligible classes until Nov 30."
+            "question": "Which classes does BLACKFRIDAY25 work on?",
+            "answer": "The classes listed in the 25% off section above. The code applies at checkout on those classes until Nov 30."
+          }
+        },
+        "class_1": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Mon Nov 30",
+            "venue": "Knock On Wood Design Studio",
+            "city": "Wyandotte, MI",
+            "url": "/products/pour-your-own-epoxy%E2%84%A2-november-30th-at-knock-on-wood-design-studio-wyandotte-mi"
+          }
+        },
+        "class_2": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Wed Dec 2",
+            "venue": "Tenth Ward Distilling Co.",
+            "city": "Frederick, MD",
+            "url": "/products/pour-your-own-epoxy-december-2nd-at-tenth-ward-distilling-co-frederick-md"
+          }
+        },
+        "class_3": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Thu Dec 3",
+            "venue": "Tenth Ward Distilling Co.",
+            "city": "Frederick, MD",
+            "url": "/products/pour-your-own-epoxy-december-3rd-at-tenth-ward-distilling-co-frederick-md"
+          }
+        },
+        "class_4": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Thu Dec 3",
+            "venue": "Lansing Brewing Company",
+            "city": "Lansing, MI",
+            "url": "/products/pour-your-own-epoxy%E2%84%A2-december-3rd-at-lansing-brewing-company-lansing-mi"
+          }
+        },
+        "class_5": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Fri Dec 4",
+            "venue": "Mystique Barrel Brewing",
+            "city": "Baltimore, MD",
+            "url": "/products/pour-your-own-epoxy-december-4th-at-mystique-barrel-brewing-baltimore-md"
+          }
+        },
+        "class_6": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Sat Dec 5",
+            "venue": "Mystique Barrel Brewing",
+            "city": "Baltimore, MD",
+            "url": "/products/pour-your-own-epoxy-december-5th-at-mystique-barrel-brewing-baltimore-md"
+          }
+        },
+        "class_7": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Sun Dec 6",
+            "venue": "Cushwa Brewing Company",
+            "city": "Williamsport, MD",
+            "url": "/products/pour-your-own-epoxy-december-6th-at-cushwa-brewing-company-williamsport-md-copy"
+          }
+        },
+        "class_8": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Sun Dec 6",
+            "venue": "Athentic Brewing",
+            "city": "Athens, GA",
+            "url": "/products/pour-your-own-epoxy%E2%84%A2-december-6th-at-athentic-brewing-athens-ga"
+          }
+        },
+        "class_9": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Mon Dec 7",
+            "venue": "Cobblestone Inn and Suites",
+            "city": "Holdrege, NE",
+            "url": "/products/pour-your-own-epoxy%E2%84%A2-december-7th-at-cobblestone-inn-and-suites-holdrege-ne"
+          }
+        },
+        "class_10": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Tue Dec 8",
+            "venue": "Meeting Place",
+            "city": "Tyler, TX",
+            "url": "/products/pour-your-own-epoxy%E2%84%A2-december-8th-at-meeting-place-tyler-tx"
+          }
+        },
+        "class_11": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Thu Dec 10",
+            "venue": "ODD Muse Brewing Company",
+            "city": "Farmers Branch, TX",
+            "url": "/products/pour-your-own-epoxy%E2%84%A2-december-10th-at-odd-muse-brewing-company-farmers-branch-tx"
+          }
+        },
+        "class_12": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Mon Dec 14",
+            "venue": "3 Sheeps Brewing",
+            "city": "Sheboygan, WI",
+            "url": "/products/pour-your-own-epoxy%E2%84%A2-december-14th-at-3-sheeps-brewing-sheboygan-wi"
+          }
+        },
+        "class_13": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Tue Dec 15",
+            "venue": "Southern Brewhouse",
+            "city": "Columbus, GA",
+            "url": "/products/pour-your-own-epoxy%E2%84%A2-december-15th-at-southern-brewhouse-columbus-ga"
+          }
+        },
+        "class_14": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Wed Dec 16",
+            "venue": "Boring Bodega",
+            "city": "Bastrop, TX",
+            "url": "/products/pour-your-own-epoxy%E2%84%A2-december-16th-at-boring-bodega-bastrop-tx"
+          }
+        },
+        "class_15": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Sun Dec 20",
+            "venue": "Wyldewood Cellars",
+            "city": "Peck, KS",
+            "url": "/products/pour-your-own-epoxy%E2%84%A2-december-20th-at-wyldewood-cellars-peck-ks"
+          }
+        },
+        "class_16": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Mon Dec 21",
+            "venue": "Inbound Brew Co",
+            "city": "Minneapolis, MN",
+            "url": "/products/pour-your-own-epoxy%E2%84%A2-december-21st-at-inbound-brew-co-minneapolis-mn"
+          }
+        },
+        "class_17": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Sun Dec 27",
+            "venue": "Wild State Cider",
+            "city": "Duluth, MN",
+            "url": "/products/pour-your-own-epoxy%E2%84%A2-december-27th-at-wild-state-cider-duluth-mn"
+          }
+        },
+        "class_18": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Mon Dec 28",
+            "venue": "Wild State Cider",
+            "city": "Duluth, MN",
+            "url": "/products/pour-your-own-epoxy%E2%84%A2-december-28th-at-wild-state-cider-duluth-mn"
+          }
+        },
+        "class_19": {
+          "type": "sale_class",
+          "settings": {
+            "date_label": "Wed Dec 30",
+            "venue": "Green Bay Distillery",
+            "city": "Green Bay, WI",
+            "url": "/products/pour-your-own-epoxy%E2%84%A2-december-30th-at-green-bay-distillery-green-bay-wi"
           }
         }
       },
@@ -94,6 +265,25 @@
         "gallery_3",
         "gallery_4",
         "gallery_5",
+        "class_1",
+        "class_2",
+        "class_3",
+        "class_4",
+        "class_5",
+        "class_6",
+        "class_7",
+        "class_8",
+        "class_9",
+        "class_10",
+        "class_11",
+        "class_12",
+        "class_13",
+        "class_14",
+        "class_15",
+        "class_16",
+        "class_17",
+        "class_18",
+        "class_19",
         "faq_1",
         "faq_2",
         "faq_3",

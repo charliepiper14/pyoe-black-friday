@@ -129,7 +129,7 @@
         <h2>{{ section.settings.offer_heading }}</h2>
         <p>{{ section.settings.offer_text }}</p>
         <div class="pyoe-bf__ctas">
-          <a class="pyoe-bf__btn pyoe-bf__btn--primary" href="{{ section.settings.classes_url | default: '/pages/class-calendar' }}">Find a class near you</a>
+          <a class="pyoe-bf__btn pyoe-bf__btn--primary" href="#pyoe-bf-class-list">See the classes</a>
         </div>
       </div>
       <div class="pyoe-bf__code">
@@ -140,6 +140,16 @@
         </div>
         <p class="pyoe-bf__code-small">{{ section.settings.offer_small }}</p>
       </div>
+    </div>
+    <div class="pyoe-bf__wrap" id="pyoe-bf-class-list">
+      <h3 class="pyoe-bf__classes-title">{{ section.settings.classes_heading }}</h3>
+      <ul class="pyoe-bf__classes">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'sale_class' -%}
+            <li {{ block.shopify_attributes }}><a href="{{ block.settings.url }}"><span class="pyoe-bf__class-date">{{ block.settings.date_label }}</span><span class="pyoe-bf__class-where">{{ block.settings.venue }}, {{ block.settings.city }}</span></a></li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
     </div>
   </section>
   {%- endif -%}
@@ -203,20 +213,20 @@
 {
   "name": "PYOE Black Friday",
   "tag": "div",
-  "max_blocks": 24,
+  "max_blocks": 50,
   "settings": [
     { "type": "header", "content": "Sale dates" },
-    { "type": "text", "id": "sale_start", "label": "Sale start", "default": "2026-11-20T00:00:00-05:00", "info": "Format 2026-11-20T00:00:00-05:00 (-05:00 is US Eastern)" },
+    { "type": "text", "id": "sale_start", "label": "Sale start", "default": "2026-11-13T00:00:00-05:00", "info": "Format 2026-11-20T00:00:00-05:00 (-05:00 is US Eastern)" },
     { "type": "text", "id": "sale_end", "label": "Sale end", "default": "2026-11-30T23:59:00-05:00" },
     { "type": "text", "id": "label_before", "label": "Countdown label before sale", "default": "Black Friday deals open in" },
     { "type": "text", "id": "label_live", "label": "Countdown label during sale", "default": "Sale ends in" },
     { "type": "text", "id": "label_ended", "label": "Message after sale", "default": "This sale has ended. Thanks for a great Black Friday." },
 
     { "type": "header", "content": "Hero" },
-    { "type": "text", "id": "bar_text", "label": "Top bar", "default": "Black Friday sale runs Nov 20 to Nov 30. Save up to $50 on gift cards." },
+    { "type": "text", "id": "bar_text", "label": "Top bar", "default": "Black Friday sale runs Nov 13 to Nov 30. Save up to $50 on gift cards." },
     { "type": "text", "id": "kicker", "label": "Small line above heading", "default": "Black Friday at Pour Your Own Epoxy" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Give a night they'll pour themselves." },
-    { "type": "textarea", "id": "lede", "label": "Intro text", "default": "Gift cards for our epoxy and wood workshops at breweries, wineries and distilleries near you. Get up to $50 extra on every card, this week only." },
+    { "type": "textarea", "id": "lede", "label": "Intro text", "default": "Gift cards for our epoxy and wood workshops at breweries, wineries and distilleries near you. Get up to $50 extra on every card until November 30." },
     { "type": "image_picker", "id": "hero_image", "label": "Hero image" },
     { "type": "text", "id": "trust_text", "label": "Review line", "default": "4.8 on Google from 1,590+ reviews" },
 
@@ -229,11 +239,12 @@
 
     { "type": "header", "content": "Class discount" },
     { "type": "checkbox", "id": "show_offer", "label": "Show class discount", "default": true },
-    { "type": "text", "id": "offer_heading", "label": "Heading", "default": "15% off selected classes" },
-    { "type": "textarea", "id": "offer_text", "label": "Text", "default": "Already know who's coming with you? Book a seat at one of our Black Friday classes and take 15% off at checkout." },
-    { "type": "text", "id": "offer_code", "label": "Discount code", "default": "BLACKFRIDAY15" },
-    { "type": "text", "id": "offer_small", "label": "Small print", "default": "Valid on selected classes only, until Nov 30. Cannot be combined with other discount codes." },
+    { "type": "text", "id": "offer_heading", "label": "Heading", "default": "25% off selected classes" },
+    { "type": "textarea", "id": "offer_text", "label": "Text", "default": "Already know who's coming with you? Book a seat at one of the classes below and take 25% off at checkout." },
+    { "type": "text", "id": "offer_code", "label": "Discount code", "default": "BLACKFRIDAY25" },
+    { "type": "text", "id": "offer_small", "label": "Small print", "default": "Valid on the classes listed below until Nov 30. Can't be combined with other discount codes, including VIP15." },
     { "type": "url", "id": "classes_url", "label": "Class calendar link" },
+    { "type": "text", "id": "classes_heading", "label": "Class list heading", "default": "Classes in the sale" },
 
     { "type": "header", "content": "Experience and closing" },
     { "type": "text", "id": "exp_heading", "label": "Experience heading", "default": "What they're getting" },
@@ -258,6 +269,16 @@
       "type": "gallery_image",
       "name": "Gallery image",
       "settings": [ { "type": "image_picker", "id": "image", "label": "Image" } ]
+    },
+    {
+      "type": "sale_class",
+      "name": "Class in the sale",
+      "settings": [
+        { "type": "text", "id": "date_label", "label": "Date", "default": "Mon Nov 30" },
+        { "type": "text", "id": "venue", "label": "Venue", "default": "Venue name" },
+        { "type": "text", "id": "city", "label": "City, state", "default": "City, ST" },
+        { "type": "url", "id": "url", "label": "Class product link" }
+      ]
     },
     {
       "type": "faq",

@@ -13,17 +13,18 @@ The countdown follows the real dates, so before 20 Nov it shows "Black Friday de
 
 Images on the staging page load from the PYOE content drive. In Shopify they are picked from the store's own image library.
 
-## Offer as built (placeholders until Colin confirms)
+## Offer (confirmed by Colin, 7 Nov 2026)
 
-| Gift card value | Black Friday price | Saving |
-| --- | --- | --- |
-| $100 | $85 | $15 |
-| $150 | $125 | $25 (highlighted) |
-| $250 | $200 | $50 |
+| Gift card value | Black Friday price | Saving | Rise variant |
+| --- | --- | --- | --- |
+| $100 | $85 | $15 | 50922491674880 |
+| $150 | $125 | $25 (highlighted) | 50922491707648 |
+| $250 | $200 | $50 | 50922491740416 |
 
-* Class code: BLACKFRIDAY15, 15% off selected classes
-* Sale window: Fri 20 Nov 00:00 ET to Mon 30 Nov 23:59 ET
-* Buy buttons point to `/products/pour-your-own-epoxy-gift-card` and class links to `/pages/class-calendar`
+* Gift cards sold through the Rise app on `/products/egift-card`
+* Class code: BLACKFRIDAY25, 25% off the 19 listed classes, not combinable with VIP15
+* Sale window: Fri 13 Nov 00:00 ET to Mon 30 Nov 23:59 ET
+* The class list is a block per class in the Shopify section, so classes can be added or removed in the theme editor
 
 ## Installing in Shopify (Online Store 2.0 themes)
 
@@ -37,16 +38,7 @@ Images on the staging page load from the PYOE content drive. In Shopify they are
 
 Everything (prices, dates, code, copy, FAQs) is editable in the theme editor, so no code changes are needed when the offer is confirmed.
 
-## To confirm with Colin before launch
+## Still to confirm
 
-* Gift card tiers and prices
-* How the discounted cards are fulfilled. Shopify gift cards normally carry the value of the price paid, so selling a $150 card for $125 needs an app or a "pay $125, get a $25 bonus card" setup. This decides where each buy button links.
-* Which classes or markets BLACKFRIDAY15 applies to, and that it is restricted to those products in Shopify
-* Whether BLACKFRIDAY15 stacks with VIP15 (page copy currently says it cannot be combined)
-* Sale dates
-* Tier notes, especially "Made for a date night for two" on the $250 card
-* Gift card expiry terms, if he wants them in the FAQ
-
-## Note on the existing gift card product
-
-The store's current gift card (`/products/pour-your-own-epoxy-gift-card`) is sold in $144, $169, $184 and $199 amounts, which match class seat prices. The Black Friday tiers ($100, $150, $250) don't exist as variants yet, so the buy buttons land on the product page rather than a specific amount until the Black Friday variants are set up.
+* BLACKFRIDAY25 created in Shopify and limited to the listed class products
+* Baltimore dates: Colin listed 5 and 6 Dec, the store has 4 and 5 Dec

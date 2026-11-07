@@ -256,3 +256,20 @@
 /* Avoid single-word last lines in body copy and ragged headings */
 .pyoe-bf :where(p) { text-wrap: pretty; }
 .pyoe-bf :where(h1, h2, h3) { text-wrap: balance; }
+
+/* Classes in the sale (inside the teal offer band) */
+.pyoe-bf__classes-title { font-size: 24px; color: #fff; margin-top: 56px; margin-bottom: 18px; }
+.pyoe-bf__classes {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 28px;
+}
+.pyoe-bf__classes li { border-top: 1px solid rgba(255,255,255,.22); }
+.pyoe-bf__classes a {
+  display: flex; flex-direction: column; gap: 2px; padding: 14px 0;
+  text-decoration: none; color: #fff;
+}
+.pyoe-bf__class-date { font-weight: 700; font-size: 17px; }
+.pyoe-bf__class-where { font-size: 15px; color: #d4efec; }
+.pyoe-bf__classes a:hover .pyoe-bf__class-where { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 900px) { .pyoe-bf__classes { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .pyoe-bf__classes { grid-template-columns: 1fr; } .pyoe-bf__classes-title { margin-top: 40px; } }
