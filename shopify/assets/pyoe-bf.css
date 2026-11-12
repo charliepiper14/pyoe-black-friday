@@ -273,3 +273,6 @@
 .pyoe-bf__classes a:hover .pyoe-bf__class-where { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 900px) { .pyoe-bf__classes { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .pyoe-bf__classes { grid-template-columns: 1fr; } .pyoe-bf__classes-title { margin-top: 40px; } }
+
+/* Highlight theme adds a large top margin to .page-content; remove it on this page only */
+.template-page-black-friday .page-content { margin-top: 0; }
